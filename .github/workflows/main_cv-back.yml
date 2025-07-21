@@ -20,8 +20,11 @@ jobs:
         with:
           node-version: '20.x'
 
+      - name: Install Nest CLI globally
+        run: npm install -g @nestjs/cli
+
       - name: Install dependencies (only prod)
-        run: npm install --include=dev
+        run: npm install
 
       - name: Build NestJS app
         run: npm run build
@@ -71,4 +74,4 @@ jobs:
         with:
           app-name: 'cv-back'
           slot-name: 'Production'
-          package: release.zip
+          package: .
