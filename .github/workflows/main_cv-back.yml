@@ -21,7 +21,7 @@ jobs:
           node-version: '20.x'
 
       - name: Install dependencies (only prod)
-        run: npm ci --omit=dev
+        run: npm install --include=dev
 
       - name: Build NestJS app
         run: npm run build
